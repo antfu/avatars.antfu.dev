@@ -1,0 +1,39 @@
+{
+  "type": "module",
+  "version": "0.3.1",
+  "private": true,
+  "packageManager": "pnpm@10.5.2",
+  "scripts": {
+    "build:server": "pnpm -C server run build",
+    "dev": "pnpm -C server run dev",
+    "lint": "eslint .",
+    "prepublishOnly": "nr build",
+    "release": "bumpp",
+    "typecheck": "tsc --noEmit",
+    "prepare": "simple-git-hooks"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.3.0",
+    "@antfu/ni": "^23.3.1",
+    "@antfu/utils": "^9.1.0",
+    "@types/node": "^22.13.8",
+    "bumpp": "^10.0.3",
+    "eslint": "^9.21.0",
+    "lint-staged": "^15.4.3",
+    "simple-git-hooks": "^2.11.1",
+    "tinyexec": "^0.3.2",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "unbuild": "^3.5.0",
+    "vite": "^6.2.0",
+    "vitest": "^3.0.7",
+    "wait-port": "^1.1.0",
+    "zx": "^8.3.2"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
